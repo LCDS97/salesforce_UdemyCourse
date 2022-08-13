@@ -35,3 +35,10 @@ connectedCallback - É um método do ciclo de vida do framework do LWC, ele pode
 setInterval - É um método que serve para repetidamente chamar uma função por um determinado intervalo de tempo
 
 O método filtro cria um novo array para todos os elementos que passaram no teste
+
+Propriedades publicas são reativas, se o valor de uma propriedade pública mudar, o componente ira se renderizar, para expor uma propriedade publica, utiliza o decorador:
+@api
+
+Exemplo:
+
+No componente pai toDoManager estou passando valores do js dentro do componente filho toDoItem através do html, então para acessar esses valores do pai, eu exponho eles no js do filho

@@ -26,15 +26,12 @@
         <lightning-layout-item size="12">
             <div>Próximas tarefas</div>
             <template for:each={tarefasProximas} for:item="tarefa">
-                <div class="item-class" key={tarefa.tarefaId}>
-                    <span class="slds-text-heading_label">{tarefa.tarefaNome}</span>
-                    <lightning-button-icon icon-name="utility:check" class="slds-p-horizontal_medium"
-                        onclick={atualizarHandler} title="Atualizar tarefa"
-                    ></lightning-button-icon>
-                    <lightning-button-icon icon-name="utility:delete" class="slds-p-horizontal_medium"
-                        onclick={deletarHandler} title="Deletar tarefa"
-                    ></lightning-button-icon>
-                </div>
+                <c-to-do-item
+                    key={tarefa.tarefaId}
+                    tarefa-id={tarefa.tarefaId}
+                    tarefa-nome={tarefa.tarefaNome}
+                    >
+                </c-to-do-item>  
             </template>
             <div>Tarefas Completadas</div>
             <template for:each={tarefasCumpridas} for:item="tarefa">
