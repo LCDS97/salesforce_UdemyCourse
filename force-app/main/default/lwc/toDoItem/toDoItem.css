@@ -1,0 +1,40 @@
+.tarefa{
+    border: 1px solid lightgray;
+    padding: .5rem;
+    width: fit-content;
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all .5s ease;
+    
+}
+
+.completa{
+    color: antiquewhite;
+    background-color: darkgreen;
+    font-size: medium;
+    text-transform: uppercase;
+}
+
+.completa:hover{
+    background-color: rgb(149, 199, 149);
+    font-size: large;
+    border-radius: 16px;
+    text-transform: uppercase;
+}
+
+.proxima{
+    background-color: lightcoral;
+    font-size: medium;
+    text-transform: uppercase;
+}
+
+.proxima:hover{
+    background-color: aliceblue;
+    color: black;
+    font-size: large;
+    border-radius: 16px;
+    text-transform: uppercase;
+}
+

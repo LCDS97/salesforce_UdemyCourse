@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <span class="slds-text-heading_label">{tarefaNome}</span>
+    <div class={verificarTarefa}>
+        <span class="slds-text">{tarefaNome}</span>
         <lightning-button-icon icon-name="utility:check" class="slds-p-horizontal_medium"
             onclick={atualizarHandler} title="Atualizar tarefa"
         ></lightning-button-icon>
