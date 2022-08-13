@@ -15,6 +15,9 @@ export default class ToDoManager extends LightningElement {
         // Utilizando a função do getTime para popular valores do JS no HTML
         this.getTime();
 
+        // Mocando tarefas para verificar se esta lógica certa
+        this.tarefasMock();
+
         // Método setInterval serve para repetidamente chamar uma função por um determinado intervalo de tempo
         setInterval(() => {
             this.getTime()
@@ -93,5 +96,33 @@ export default class ToDoManager extends LightningElement {
         return this.tarefas && this.tarefas.length ? this.tarefas.filter( tarefa => tarefa.done) : [];
     }
 
-
+    tarefasMock(){
+        const tarefas = [
+            {
+                tarefaId: 0,
+                tarefaNome: 'Veremos',
+                done: false,
+                tarefaData: new Date()
+            },
+            {
+                tarefaId: 1,
+                tarefaNome: 'Veremos denovo',
+                done: false,
+                tarefaData: new Date()
+            },
+            {
+                tarefaId: 2,
+                tarefaNome: 'Ainda não vi',
+                done: false,
+                tarefaData: new Date()
+            },
+            {
+                tarefaId: 3,
+                tarefaNome: 'Agora to vendo',
+                done: true,
+                tarefaData: new Date()
+            }
+        ];
+        this.tarefas = tarefas;
+    }
 }
