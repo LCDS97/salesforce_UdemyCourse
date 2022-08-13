@@ -13,7 +13,7 @@
 .completa{
     color: antiquewhite;
     background-color: darkgreen;
-    font-size: medium;
+    font-size: small;
     text-transform: uppercase;
 }
 
@@ -26,7 +26,7 @@
 
 .proxima{
     background-color: lightcoral;
-    font-size: medium;
+    font-size: small;
     text-transform: uppercase;
 }
 

@@ -1,4 +1,5 @@
 import { LightningElement, track } from 'lwc';
+import addTarefa from "@salesforce/apex/toDoController.addTodo";
 
 export default class ToDoManager extends LightningElement {
 
@@ -75,12 +76,16 @@ export default class ToDoManager extends LightningElement {
 
         // Criando propriedades e chaves para uma tarefa
         const tarefa = {
-            tarefaId: this.tarefas.length,
             tarefaNome: inputBox.value,
             done: false,
-            tarefaData: new Date()
         }
 
+        addTarefa({ payload : JSON.stringify(tarefa)}).then(Response => {
+            console.log('Item inserido com sucesso');
+
+        }).catch(error => {
+            console.error('Erro ao inserir tarefa ' +error)
+        });
         // Preencher esses valores
         this.tarefas.push(tarefa);
         inputBox.value = "";

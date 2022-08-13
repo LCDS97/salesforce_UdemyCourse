@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Salesforce App",
   "scripts": {
+    "local:lwc": "sfdx force:lightning:lwc:start",
     "lint": "eslint **/{aura,lwc}/**",
     "test": "npm run test:unit",
     "test:unit": "sfdx-lwc-jest",
