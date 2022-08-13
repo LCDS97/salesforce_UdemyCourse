@@ -13,6 +13,8 @@
 
 ### LWC - Crash Course
 
+[Tutorial Youtube - LWC Introdutório](https://youtu.be/bLyAsIeDZtw)
+
 
 Autorizar o dev Hub nas configurações da Org
 

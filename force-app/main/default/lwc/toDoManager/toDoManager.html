@@ -10,5 +10,34 @@
                 {greeting}
             </div>
         </lightning-layout-item>
+
+        <lightning-layout-item size="12" large-device-size="6" medium-device-size="10" small-device-size="12" class="slds-m-top_large">
+            <lightning-layout>
+                <lightning-layout-item size="11">
+                    <lightning-input type="text" label="O que você tem em mente" variant="label-hidden"
+                        placeholder="Coloque aqui o que você deseja fazer"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="1">
+                    <lightning-button-icon icon-name="utility:add" title="Adicionar tarefa" onclick={addTarefaHandler}></lightning-button-icon>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="12">
+            <div class="slds-text-heading_large slds-m">Próximas tarefas</div>
+            <template for:each={tarefas} for:item="tarefa">
+                <div class="item-class" key={tarefa.tarefaId}>
+                    <span class="slds-text-heading_label">{tarefa.tarefaNome}</span>
+                    <lightning-button-icon icon-name="utility:check" class="slds-p-horizontal_medium"
+                        onclick={atualizarHandler} title="Atualizar tarefa"
+                    ></lightning-button-icon>
+                    <lightning-button-icon icon-name="utility:delete" class="slds-p-horizontal_medium"
+                        onclick={deletarHandler} title="Deletar tarefa"
+                    ></lightning-button-icon>
+                </div>
+            </template>
+
+        </lightning-layout-item>
+
     </lightning-layout>
 </template>

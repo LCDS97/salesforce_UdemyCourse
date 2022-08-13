@@ -7,6 +7,8 @@ export default class ToDoManager extends LightningElement {
     @track time;
     @track greeting;
 
+    @track tarefas = [];
+
      // Função do Connected Callback é um Metódo do Ciclo de vida do framework do LWC, ele pode ser automaticamente invocado pelo framework
     connectedCallback(){
         
@@ -44,7 +46,7 @@ export default class ToDoManager extends LightningElement {
 
     // Colocando um dígito do zero a esquerda para números menores que 10
     getDoubleDigit(digit){
-        return digit < 10 ? "0"*digit : digit
+        return digit < 10 ? "0" + digit : digit
     }
 
     // Escrevendo o cumprimento de acordo com a hora do dia
@@ -62,4 +64,19 @@ export default class ToDoManager extends LightningElement {
             this.greeting = "Boa noite!"
         }
     }
+
+    addTarefaHandler(){
+        const inputBox = this.template.querySelector("lightning-input");
+        
+        const tarefa = {
+            tarefaId: this.tarefas.length,
+            tarefaNome: inputBox.value,
+            done: false,
+            tarefaData: new Date()
+        }
+        this.tarefas.push(tarefa);
+        inputBox.value = "";
+    }
+
+
 }
