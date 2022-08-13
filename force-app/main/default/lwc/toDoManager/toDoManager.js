@@ -66,16 +66,31 @@ export default class ToDoManager extends LightningElement {
     }
 
     addTarefaHandler(){
+        // Pegando valor do input
         const inputBox = this.template.querySelector("lightning-input");
-        
+
+
+        // Criando propriedades e chaves para uma tarefa
         const tarefa = {
             tarefaId: this.tarefas.length,
             tarefaNome: inputBox.value,
             done: false,
             tarefaData: new Date()
         }
+
+        // Preencher esses valores
         this.tarefas.push(tarefa);
         inputBox.value = "";
+    }
+
+    get tarefasProximas(){
+        // Verificando caso as tarefas não sejam nulas ou menor que zero, e diferentes de completas para cair na lista de proximas tarefas, caso seja nula atribuir um array vazio
+        return this.tarefas && this.tarefas.length ? this.tarefas.filter( tarefa => !tarefa.done) : [];
+    }
+
+    get tarefasCumpridas(){
+        // Verificando caso as tarefas não sejam nulas ou menor que zero, e diferentes de completas para cair na lista de proximas tarefas, caso seja nula atribuir um array vazio
+        return this.tarefas && this.tarefas.length ? this.tarefas.filter( tarefa => tarefa.done) : [];
     }
 
 

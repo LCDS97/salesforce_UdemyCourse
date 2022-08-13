@@ -33,3 +33,5 @@ https://localhost:3333
 
 connectedCallback - É um método do ciclo de vida do framework do LWC, ele pode ser automaticamente invocado pelo framework
 setInterval - É um método que serve para repetidamente chamar uma função por um determinado intervalo de tempo
+
+O método filtro cria um novo array para todos os elementos que passaram no teste
